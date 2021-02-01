@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400&display=swap" rel="stylesheet">
+    <title>BoolZap</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+
+    <div class="green-bar">
+
+      <div id="app"  class="container clearfix">
+        <div class="contain">
+
+           <!-- inizio sidebar -->
+          <nav class="sidebar fl ">
+            <nav class="sidebar-content flex">
+             <div class="sidebar-box-left">
+               <img src="./img/avatar_io.jpg" alt="">
+               <span>Nome utente</span>
+             </div>
+             <div class="sidebar-box-right">
+              <a href="#"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+             </div>
+            </nav>
+            <div class="notif-bar flex">
+              <div class="bell ">
+                <i class="fa fa-bell-slash" aria-hidden="true"></i>
+              </div>
+              <div class="text-notif">
+                Ricevi notifiche di nuovi messaggi <br>
+                <a href="#">Attiva notifiche desktop</a>
+              </div>
+            </div>
+            <div class="search">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="text" placeholder="Cerca o inizia una nuova chat" value="">
+            </div>
+            <div class="contact">
+             <ul>
+             <li v-for='avatar in contacts'>
+                 <img :src="" alt="">
+               </li>
+               <!-- <li>
+                 <img src="./img/avatar_1.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_2.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_3.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_4.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_5.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_6.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_7.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_8.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_8.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_8.jpg" alt="">
+               </li>
+               <li>
+                 <img src="./img/avatar_8.jpg" alt="">
+               </li> -->
+
+             </ul>
+            </div>
+          </nav>
+          <!-- fine sidebar -->
+          <main class=" main-content">
+             <!-- inizio navbar -->
+             <nav class="navbar fr flex">
+               <div class="nav-content-left">
+                  <img src="./img/avatar_1.jpg" alt="">
+               </div>
+               <div class="name">
+                 Michele <br>
+                 ultimo acesso alle
+               </div>
+             </nav>
+             <!-- fine navbar -->
+
+
+             <!-- inizio header -->
+             <section class="fr">
+
+             </section>
+             <!-- fine navbar -->
+
+
+             <!-- inizio footer -->
+             <footer class="footer-bar fr">
+
+             </footer>
+             <!-- fine navbar -->
+
+
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
