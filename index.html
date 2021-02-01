@@ -44,8 +44,9 @@
             </div>
             <div class="contact">
              <ul>
-             <li v-for='avatar in contacts'>
-                 <img :src="" alt="">
+             <li v-for='contact in contacts' @click="contact">
+                 <img :src="'./img/avatar' + contact.avatar + '.jpg'"   alt="">
+                 <span >{{contact.name}}</span>
                </li>
                <!-- <li>
                  <img src="./img/avatar_1.jpg" alt="">
@@ -85,32 +86,33 @@
             </div>
           </nav>
           <!-- fine sidebar -->
+
           <main class=" main-content">
              <!-- inizio navbar -->
              <nav class="navbar fr flex">
-               <div class="nav-content-left">
-                  <img src="./img/avatar_1.jpg" alt="">
+               <div class="nav-content-left" >
+
                </div>
                <div class="name">
-                 Michele <br>
                  ultimo acesso alle
                </div>
              </nav>
              <!-- fine navbar -->
 
 
-             <!-- inizio header -->
+             <!-- inizio section -->
              <section class="fr">
 
              </section>
-             <!-- fine navbar -->
+              <!-- fine section -->
+
 
 
              <!-- inizio footer -->
              <footer class="footer-bar fr">
 
              </footer>
-             <!-- fine navbar -->
+             <!-- fine footer -->
 
 
           </main>
