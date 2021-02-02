@@ -39,7 +39,6 @@ body{
   width: 1200px;
   height: 700px;
   margin: 0 auto;
-  border: 1px solid black;
 }
 
 .contain{
@@ -95,11 +94,11 @@ body{
 }
 
 .bell .fa-bell-slash{
-  font-size: 30px;
+  font-size: 20px;
   background: #fff;
   border-radius: 50%;
   color: #8EDAFC;
-  margin: 15px 10px 0px 30px;
+  margin: 15px 25px 0px 15px;
   padding: 15px;
 }
 
@@ -143,6 +142,7 @@ img{
   margin: 5px 10px 0px 10px;
   width: 80px;
   border-radius: 50%;
+  vertical-align: middle;
 }
 
 /* fine sidebar */
@@ -152,7 +152,7 @@ img{
   background: #eaeaea;
 
 }
-.name{
+.profile{
   display: inline;
 }
 
@@ -166,14 +166,32 @@ img{
 img{
   border-radius: 50%;
   padding: 5px;
+  display: inline-block;
 }
 
-section{
+.right-container{
   width: calc(100% - 35%);
   height: calc(1000px - 60px);
-
+  line-height: 2.5;
 }
 
+.received{
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 20px;
+  float: left;
+  padding: 0px 10px;
+}
+.sent{
+  background: lightgreen;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  padding: 0px 10px;
+  float: right;
+}
 
 .footer-bar{
   background: #eaeaea;
@@ -183,11 +201,15 @@ section{
 
 .footer-bar .fa{
   font-size: 30px;
-  margin: 20px 20px 0px 20px;
+  margin: 15px 20px 0px 20px;
+  opacity: 0.5;
 }
 
 .footer-bar input{
   width: 80%;
   height: 55px;
   padding: 10px 10px 10px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px ;
 }
