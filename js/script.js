@@ -2,6 +2,7 @@ new Vue({
   el: '#app',
    data: {
      chatText: '',
+     searchText: '',
      avatarIDX: 0,
     contacts: [
         {
@@ -94,11 +95,56 @@ methods:{
     this.avatarIDX = index;
     console.log(this.avatarIDX);
 },
-addToContact: function(element) {
-  this.messages.push(this.chatText);
-console.log(this.chatText);
-}
-}
+currentDate: function() {
+  const d = new Date();
+  let dateString = d.toLocaleString();
+  dateString = dateString.replace(',', '');
+  return dateString;
+  console.log(this.currentDate);
+},
+autoReply: function () {
+  const reply = {
+    date: this.currentDate(),
+    text: 'tutto alla grande',
+    status: 'received'
+  }
+  this.contacts[this.avatarIDX].messages.push(reply)
+},
+sendMessage: function() {
+  const newMessageObject = {
+    date: this.currentDate(),
+    text: this.chatText,
+    status: 'sent'
+  }
+  this.contacts[this.avatarIDX].messages.push(newMessageObject)
+  this.chatText = '';
+
+
+  let that = this;
+  setTimeout(function(){
+    that.autoReply()
+  }, 1000)
+  // per fare una funzione di call back devo usare il that.
+},
+
+  search: function () {
+    this.contacts.forEach((item) => {
+      let userName = item.name.toLowerCase();
+      let searchString = this.searchText.toLowerCase();
+      if (userName.includes(searchString)) {
+        item.visible = true
+      }else {
+        item.visible = false
+      }
+      console.log(userName);
+      console.log(searchString);
+      console.log(item.visible);
+    });
+
+  }
+
+  }
+
 
 });
 Vue.config.devtools = true

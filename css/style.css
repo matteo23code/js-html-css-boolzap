@@ -150,17 +150,21 @@ img{
   width: calc(100% - 35%);
   height: 70px;
   background: #eaeaea;
-
-}
-.profile{
-  display: inline;
 }
 
-.navbar img{
+.nav-content-left img{
   margin: 0px 10px;
   width: 70px;
   border-radius: 50%;
-  vertical-align: middle;
+}
+
+.nav-content-name{
+  position: relative;
+  top: 35%;
+}
+
+.nav-content-time{
+  opacity: 0.5;
 }
 
 img{

@@ -39,13 +39,15 @@
               </div>
             </div>
             <div class="search">
-              <i class="fa fa-search" aria-hidden="true"></i>
-              <input type="text" placeholder="Cerca o inizia una nuova chat" value="">
+              <label for="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </label>
+              <input type="text" placeholder="Cerca o inizia una nuova chat"  @keyup='search' v-model='searchText' name="search">
             </div>
             <div class="contact">
              <ul>
-             <li v-for='(contact, index) in contacts' @click="setActiveContact(index)">
-                 <img  class="visible"  :src="'./img/avatar' + contact.avatar + '.jpg'"   alt="">
+             <li v-for='(contact, index) in contacts' v-if='contact.visible' @click="setActiveContact(index)">
+                 <img :src="'./img/avatar' + contact.avatar + '.jpg'"   alt="">
                  <span> {{contact.name}} </span>
                </li>
              </ul>
@@ -57,13 +59,14 @@
              <!-- inizio navbar -->
              <nav class="navbar fr flex">
                <div class="nav-content-left" >
-
+                 <img  :src="'./img/avatar' + contacts[avatarIDX].avatar + '.jpg'" alt="">
+                  <h4 class="nav-content-name fr"><span>{{contacts[avatarIDX].name}}</span>
+                   <br>
+                   <small class="nav-content-time"> Ultimo accesso alle{{currentDate[avatarIDX]}} </small></h4>
+                 </span>
                </div>
-               <div class="profile" >
-                <div >
-                  <img class="visible" :src="'./img/avatar' + contacts[avatarIDX].avatar + '.jpg'" alt="">
-                  <span>{{contacts[avatarIDX].name}}</span>
-                </div>
+               <div class="nav-content-right" >
+
                </div>
              </nav>
              <!-- fine navbar -->
@@ -82,7 +85,9 @@
              <!-- inizio footer -->
              <footer class="footer-bar fr">
                <i class="fa fa-smile-o" aria-hidden="true"></i>
-               <input type="text" placeholder="Scrivi un messaggio" value="">
+               <input type="text" placeholder="Scrivi un messaggio" value=""
+                v-model='chatText'
+                @keyup.enter='sendMessage'>
                <i class="fa fa-microphone" aria-hidden="true"></i>
              </footer>
              <!-- fine footer -->
