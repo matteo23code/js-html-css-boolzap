@@ -4,6 +4,8 @@ new Vue({
      chatText: '',
      searchText: '',
      avatarIDX: 0,
+     utente: '_io',
+     nameIo: 'Fulvia',
     contacts: [
         {
         name: 'Michele',
@@ -88,12 +90,108 @@ new Vue({
         }
     ],
 },
+{
+name: 'Flavio',
+avatar: '_5',
+visible: true,
+messages: [
+      {
+      date: '28/03/2020 10:10:40',
+      text: 'La Marianna va in campagna',
+      status: 'received'
+      },
+      {
+      date: '28/03/2020 10:20:10',
+      text: 'Sicuro di non aver sbagliato chat?',
+      status: 'sent'
+      },
+      {
+      date: '28/03/2020 16:15:22',
+      text: 'Ah scusa!',
+      status: 'received'
+      }
+],
+},
+{
+name: 'Enrica',
+avatar: '_6',
+visible: true,
+messages: [
+      {
+      date: '28/03/2020 10:10:40',
+      text: 'La Marianna va in campagna',
+      status: 'received'
+      },
+      {
+      date: '28/03/2020 10:20:10',
+      text: 'Sicuro di non aver sbagliato chat?',
+      status: 'sent'
+      },
+      {
+      date: '28/03/2020 16:15:22',
+      text: 'Ah scusa!',
+      status: 'received'
+      }
+],
+},
+{
+name: 'Gennaro',
+avatar: '_7',
+visible: true,
+messages: [
+      {
+      date: '28/03/2020 10:10:40',
+      text: 'La Marianna va in campagna',
+      status: 'received'
+      },
+      {
+      date: '28/03/2020 10:20:10',
+      text: 'Sicuro di non aver sbagliato chat?',
+      status: 'sent'
+      },
+      {
+      date: '28/03/2020 16:15:22',
+      text: 'Ah scusa!',
+      status: 'received'
+      }
+],
+},
+{
+name: 'Mario',
+avatar: '_8',
+visible: true,
+messages: [
+      {
+      date: '28/03/2020 10:10:40',
+      text: 'La Marianna va in campagna',
+      status: 'received'
+      },
+      {
+      date: '28/03/2020 10:20:10',
+      text: 'Sicuro di non aver sbagliato chat?',
+      status: 'sent'
+      },
+      {
+      date: '28/03/2020 16:15:22',
+      text: 'Ah scusa!',
+      status: 'received'
+      }
+],
+},
 ]},
 methods:{
   setActiveContact: function(index) {
     // setta il contatto attivo
     this.avatarIDX = index;
     console.log(this.avatarIDX);
+},
+// assegno la data all ultimo accesso
+lastAccess: function (index) {
+  let messages = this.contacts[index].messages
+  let lastIndex = messages.length -1
+  let lastDate = messages[lastIndex].dateString
+  return lastDate;
+  console.log(lastDate);
 },
 currentDate: function() {
   const d = new Date();
@@ -126,7 +224,8 @@ sendMessage: function() {
   }, 1000)
   // per fare una funzione di call back devo usare il that.
 },
-
+  // creo una funzione per cercare un contatto e verifico che all inserimento di una lettera mi trovi il contatto corrispondente
+  // e che mi correga il testo in caso di lettere iniziali in minuscolo.
   search: function () {
     this.contacts.forEach((item) => {
       let userName = item.name.toLowerCase();

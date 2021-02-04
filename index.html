@@ -10,23 +10,22 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   </head>
   <body>
-
+    <!-- sfondo body -->
     <div class="green-bar">
-
+      <!-- inizio container principale -->
       <div id="app"  class="container clearfix">
-        <div class="contain">
 
            <!-- inizio sidebar -->
           <nav class="sidebar fl ">
             <nav class="sidebar-content flex">
              <div class="sidebar-box-left">
-               <img src="./img/avatar_io.jpg" alt="">
-               <span>Nome utente</span>
+               <img :src="'./img/avatar' + '_io' + '.jpg'" alt="">
+               <span>{{nameIo}}</span>
              </div>
              <div class="sidebar-box-right">
               <a href="#"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
              </div>
             </nav>
             <div class="notif-bar flex">
@@ -55,46 +54,49 @@
           </nav>
           <!-- fine sidebar -->
 
-          <main class=" main-content">
+          <main class="container-right fr">
+
              <!-- inizio navbar -->
              <nav class="navbar fr flex">
                <div class="nav-content-left" >
                  <img  :src="'./img/avatar' + contacts[avatarIDX].avatar + '.jpg'" alt="">
                   <h4 class="nav-content-name fr"><span>{{contacts[avatarIDX].name}}</span>
                    <br>
-                   <small class="nav-content-time"> Ultimo accesso alle{{currentDate[avatarIDX]}} </small></h4>
+                   <small class="nav-content-time"> Ultimo accesso alle {{currentDate(avatarIDX)}} </small></h4>
                  </span>
                </div>
                <div class="nav-content-right" >
-
+                <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+                 <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
                </div>
              </nav>
              <!-- fine navbar -->
 
-             <!-- inizio section -->
-             <div class="right-container fr ">
+             <!-- inizio chat container -->
+             <div class="chat-container">
                   <div v-for="message in contacts[avatarIDX].messages"
                     :class="'message ' + message.status" class="clearfix">
                     {{message.text}}
                   </div>
              </div>
-              <!-- fine section -->
+              <!-- fine chat container -->
 
 
 
              <!-- inizio footer -->
-             <footer class="footer-bar fr">
+             <footer class="footer-bar fl flex">
                <i class="fa fa-smile-o" aria-hidden="true"></i>
-               <input type="text" placeholder="Scrivi un messaggio" value=""
-                v-model='chatText'
-                @keyup.enter='sendMessage'>
+               <div class="write-message">
+                 <input type="text" placeholder="Scrivi un messaggio" value=""
+                 v-model='chatText'
+                 @keyup.enter='sendMessage'>
+               </div>
                <i class="fa fa-microphone" aria-hidden="true"></i>
              </footer>
+           </main>
              <!-- fine footer -->
 
-
-          </main>
-        </div>
       </div>
     </div>
 

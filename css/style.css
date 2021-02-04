@@ -23,9 +23,9 @@ body{
 .fl{
   float: left;
 }
+
 .flex{
   display: flex;
-
 }
 
 .clearfix{
@@ -36,22 +36,16 @@ body{
 /* fine utility */
 
 .container{
-  width: 1200px;
-  height: 700px;
+  width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-.contain{
   background: url('../img/mine.jpg');
-  width: 100%;
-  height: 100%;
 }
 
 /* inizio sidebar */
 .sidebar{
   background:  #fafafa;
   width: 35%;
-  height: 100%;
 }
 
 .sidebar-content{
@@ -61,7 +55,7 @@ body{
 }
 
 .sidebar-box-left{
- width: 50%;
+ width: 70%;
 }
 
 .sidebar-box-left img{
@@ -77,9 +71,9 @@ body{
 
 .sidebar-box-right .fa{
   font-size: 20px;
-  opacity: 0.2;
   line-height: 3;
   margin-left: 15px;
+  opacity: 0.4;
   color: black;
 }
 
@@ -98,7 +92,7 @@ body{
   background: #fff;
   border-radius: 50%;
   color: #8EDAFC;
-  margin: 15px 25px 0px 15px;
+  margin: 15px 15px 0px 15px;
   padding: 15px;
 }
 
@@ -112,7 +106,7 @@ body{
 .search .fa-search{
   padding: 10px 10px;
   font-size: 20px;
-  color: rgba(0, 0, 0, 0.2);
+  opacity: 0.4;
 }
 
 .search input{
@@ -125,11 +119,11 @@ body{
 .contact{
   background: #fafafa;
   height: 860px;
+  overflow-y: scroll;
 }
 
 .contact ul{
   height: 70%;
-  overflow-y: auto;
 }
 
 .contact li{
@@ -144,12 +138,18 @@ img{
   border-radius: 50%;
   vertical-align: middle;
 }
-
 /* fine sidebar */
-.navbar{
+
+.container-right{
   width: calc(100% - 35%);
+}
+
+/* inizio navbar */
+.navbar{
+  width: 100%;
   height: 70px;
   background: #eaeaea;
+  justify-content: space-between;
 }
 
 .nav-content-left img{
@@ -173,10 +173,23 @@ img{
   display: inline-block;
 }
 
-.right-container{
-  width: calc(100% - 35%);
-  height: calc(1000px - 60px);
+.nav-content-right .fa{
+ font-size: 25px;
+ margin-right: 20px;
+ margin-top: 20px;
+ opacity: 0.4;
+ color: black;
+}
+/* fine navbar */
+
+/* inizio chat container */
+.chat-container{
+  width: 100%;
+  height: 74vh;
+  max-height: 900px;
   line-height: 2.5;
+  overflow-y: scroll;
+
 }
 
 .received{
@@ -187,6 +200,7 @@ img{
   float: left;
   padding: 0px 10px;
 }
+
 .sent{
   background: lightgreen;
   text-align: center;
@@ -196,24 +210,32 @@ img{
   padding: 0px 10px;
   float: right;
 }
+/* fine chat container */
 
+/* inizio footer */
 .footer-bar{
   background: #eaeaea;
-  width: calc(100% - 35%);
-  height: 70px;
+  width: 100%;
+  height: 100px;
 }
 
 .footer-bar .fa{
   font-size: 30px;
-  margin: 15px 20px 0px 20px;
+  margin: 35px 20px 0px 20px;
   opacity: 0.5;
 }
 
-.footer-bar input{
-  width: 80%;
-  height: 55px;
-  padding: 10px 10px 10px 10px;
+.write-message input{
+  width: 100%;
+  height: 50px;
   border: none;
   border-radius: 5px;
   font-size: 18px ;
+  justify-content: center;
 }
+
+.write-message{
+  width: 100%;
+  margin-top: 30px
+}
+/* fine footer */
